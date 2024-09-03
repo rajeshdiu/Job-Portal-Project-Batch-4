@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <title>Preskool - Dashboard</title>
+      <link rel="shortcut icon" href="/static/assets2/img/favicon.png">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap">
+      <link rel="stylesheet" href="/static/assets2/plugins/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/assets2/plugins/fontawesome/css/fontawesome.min.css">
+      <link rel="stylesheet" href="/static/assets2/plugins/fontawesome/css/all.min.css">
+      <link rel="stylesheet" href="/static/assets2/css/style.css">
+   </head>
+   <body>
+      <div class="main-wrapper">
+         {% include 'Dashboard/header.html' %}
+         {% include 'Dashboard/sidebar.html' %}
+         
+         <div class="page-wrapper">
+            <div class="content container-fluid">
+               
+               
+               {% block body %}
+
+               
+                  
+               {% endblock body %}
+                  
+            </div>
+            {% include 'Dashboard/footer.html' %}
+          
+         </div>
+
+
+      </div>
+      <script src="/static/assets2/js/jquery-3.6.0.min.js"></script>
+      <script src="/static/assets2/js/popper.min.js"></script>
+      <script src="/static/assets2/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <script src="/static/assets2/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+      <script src="/static/assets2/plugins/apexchart/apexcharts.min.js"></script>
+      <script src="/static/assets2/plugins/apexchart/chart-data.js"></script>
+      <script src="/static/assets2/js/script.js"></script>
+   </body>
+   
+</html>

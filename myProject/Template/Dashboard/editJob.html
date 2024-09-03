@@ -1,0 +1,135 @@
+{% extends 'Dashboard/master.html' %}
+
+
+{% block body %}
+<div class="page-header">
+    <div class="row align-items-center">
+       <div class="col">
+          <h3 class="page-title">Add Job</h3>
+          <ul class="breadcrumb">
+             <li class="breadcrumb-item"><a href="hostel.html">Job</a></li>
+             <li class="breadcrumb-item active">Add Job</li>
+          </ul>
+       </div>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-sm-12">
+       <div class="card">
+          <div class="card-body">
+             <form action="  " method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+                <div class="row">
+                   <div class="col-12">
+                      <h5 class="form-title"><span>Job Information</span></h5>
+                   </div>
+
+                   <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                       <label>Job ID</label>
+                       <input type="text" class="form-control" value="{{job.id}}" name="job_id" readonly>
+                    </div>
+                 </div>
+
+
+                   <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                         <label>Job Title</label>
+                         <input type="text" class="form-control" value="{{job.job_title}}" name="job_title">
+                      </div>
+                   </div>
+
+                   <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" value="{{job.company_name}}"  name="company_name">
+                     </div>
+                  </div>
+
+                   <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                         <label>Job Details</label>
+                         <textarea type="text" class="form-control"   name="job_details">{{job.job_details}}" </textarea>
+                      </div>
+                   </div>
+                   <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                         <label>Job Type</label>
+                         <select class="form-control"  name="job_type">
+                            <option>Select Type</option>
+                            <option  value="full_time">Full Time</option>
+                            <option  value="part_time">Part Time</option>
+                         </select>
+                      </div>
+                   </div>
+                   <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                         <label>Salary</label>
+                         <input type="text" class="form-control" value="{{job.job_salary}}" name="job_salary">
+                      </div>
+                   </div>
+                   <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Job Location</label>
+                        <input type="text" class="form-control" value="{{job.job_location}}" name="job_location">
+                     </div>
+                  </div>
+                  
+                   <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Vacancy</label>
+                        <input type="text" class="form-control" value="{{job.vacancy}}" name="vacancy">
+                     </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Application Deadline</label>
+                        <input type="date" class="form-control" value="{{job.application_deadline| date:'Y m D' }}" name="application_deadline">
+                     </div>
+                  </div>
+
+                   <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Requirement</label>
+                        <textarea type="text" class="form-control" value="" name="requirement">{{job.requirement}}</textarea>
+                     </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6">
+                     <div class="form-group">
+                        <label>Education</label>
+                        <textarea type="text" class="form-control" value="" name="education">{{job.education}}</textarea>
+                     </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                       <label>Company Logo</label>
+                       <input type="file" class="form-control" name="company_logo">
+
+                       
+                       {% if job.company_logo %}
+                       <img src="{{job.company_logo.url}}" alt="" height="50px">
+                       <input type="hidden" class="form-control" value="{{job.company_logo.url}}" name="current_image">
+
+                       {% else %}
+                       <input type="hidden" class="form-control" value="{{job.company_logo.url}}" name="current_image">
+                       {% endif %}
+                        
+                       
+                    </div>
+                 </div>
+                   
+                   <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Add Job</button>
+                   </div>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+    
+{% endblock body %}
+    
